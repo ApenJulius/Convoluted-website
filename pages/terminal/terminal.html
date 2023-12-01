@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Terminal</title>
+    <link rel="stylesheet" href="terminal.css">
+
+</head>
+<body>
+    <div id="terminal">user@Safehouse></div>
+    <script>
+        let terminal = document.getElementById("terminal");
+        terminal.addEventListener("click", () => {
+            // Focus the input field when the terminal is clicked
+            input.focus();
+        });
+        // Create an input field
+        let input = document.createElement("input");
+        input.style.background = "black"; // Match the terminal background color
+        input.style.border = "none"; // Remove the border
+        input.style.color = "white"; // Match the terminal text color
+        input.style.outline = "none"; // Remove the outline
+        input.style.fontFamily = "'Courier New', Courier, monospace"; // Match the terminal font
+        input.style.fontSize = "x-large"; // Match the terminal font size
+        input.style.width = "100%"; // Make the input field take up the full width of the terminal
+
+        // Add the input field to the terminal
+        terminal.appendChild(input);
+
+    </script>
+</body>
