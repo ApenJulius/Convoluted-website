@@ -10,6 +10,6 @@
   },
   "scripts": {
     "start": "tsc && node -r dotenv/config ./dist/index.js",
-    "dev": "nodemon -r dotenv/config ./src/index.js"
+    "dev": "nodemon -r dotenv/config ./dist/index.js"
   }
 }

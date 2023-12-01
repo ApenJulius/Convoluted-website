@@ -3,13 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>登录</title>
-    <link rel="stylesheet" href="/static/css/login.css">
+    <link rel="stylesheet" href="login.css">
 
 </head>
 <body>
-    <form class="login">
-        <input type="text" id="fname" name="fname"><br><br>
-        <input type="submit" value="Submit">
+    <h1 id="top-text"></h1>
+    <form id="login" onsubmit="login()">
+        <input type="text" id="password" name="password" placeholder="Password">
     </form>
 
+    <script>
+        function login() {
+            const password = document.getElementById("password").value;
+            const data = {
+                "password": password
+            };
+            fetch("/login", {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+        }
+        let i = 0
+        function topText() {
+            const topText = document.getElementById("top-text");
+            const txt = "Welcome"
+            for (let i = 0; i < txt.length; i++) {
+                setTimeout(() => {
+                    topText.innerHTML += txt.charAt(i);
+                }, 100 * i);
+            }
+        }
+        topText();
+    </script>
 </body>
